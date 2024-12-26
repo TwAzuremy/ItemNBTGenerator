@@ -4,6 +4,7 @@ import minecraft.attribute.display.attribute.Text;
 import minecraft.attribute.display.color.MINECRAFT_COLOR;
 import minecraft.attribute.enchantment.ENCHANTMENT;
 import minecraft.attribute.enchantment.EnchantedItem;
+import minecraft.attribute.hideFlags.HIDEFLAGS;
 import minecraft.attribute.modifier.AttributeModifiers;
 import minecraft.attribute.modifier.Attribute;
 import minecraft.attribute.modifier.attribute.ATTRIBUTE;
@@ -39,7 +40,7 @@ public class Main {
         Text lore_2 = new Text("It can increase max_health, as well as provide armor.", MINECRAFT_COLOR.PURPLE, false, false);
 
         // Put name and lore in display.
-        Display display = new Display(List.of(name), List.of(lore_1, lore_2));
+        Display display = new Display(name, List.of(lore_1, lore_2));
 
         // Create enchantment. Here a "Protection" is added with a value of 10
         EnchantedItem enchantment = new EnchantedItem();
@@ -50,6 +51,10 @@ public class Main {
         nbt.setAttributeModifiers(attributeModifiers);
         nbt.setDisplay(display);
         nbt.setEnchantment(enchantment);
+
+        // Hide "enchantment" and "unbreakable".
+        // But it doesn't seem to be set "unbreakable". All here only hides the effect of "enchantment".
+        nbt.setHideFlags(HIDEFLAGS.ENCHANTMENTS, HIDEFLAGS.UNBREAKABLE);
 
         // Get the string and paste it into your instruction.
         // You can try sticking it to the back of a helmet. Because the example code sets the slot to be the "head".

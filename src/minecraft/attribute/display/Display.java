@@ -16,6 +16,11 @@ public class Display {
         this.lore = lore;
     }
 
+    public Display(Text name, List<Text> lore) {
+        this.name = List.of(name);
+        this.lore = lore;
+    }
+
     private String nameFormat() {
         String format = this.name.stream().map(Text::toString).collect(Collectors.joining(", "));
 
