@@ -4,28 +4,28 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class AttributeModifiers {
-    private List<PropertyModifier> modifiers;
+    private List<Attribute> attribute;
 
-    public AttributeModifiers(List<PropertyModifier> modifiers) {
-        this.modifiers = modifiers;
+    public AttributeModifiers(List<Attribute> modifiers) {
+        this.attribute = modifiers;
     }
 
-    public AttributeModifiers(PropertyModifier... modifiers) {
-        this.modifiers = List.of(modifiers);
+    public AttributeModifiers(Attribute... modifiers) {
+        this.attribute = List.of(modifiers);
     }
 
     @Override
     public String toString() {
         return "AttributeModifiers: [" +
-                modifiers.stream().map(PropertyModifier::toString).collect(Collectors.joining(", "))
+                attribute.stream().map(Attribute::toString).collect(Collectors.joining(", "))
                 + "]";
     }
 
-    public List<PropertyModifier> getModifiers() {
-        return modifiers;
+    public List<Attribute> getModifiers() {
+        return attribute;
     }
 
-    public void setModifiers(List<PropertyModifier> modifiers) {
-        this.modifiers = modifiers;
+    public void setModifiers(List<Attribute> attribute) {
+        this.attribute = attribute;
     }
 }

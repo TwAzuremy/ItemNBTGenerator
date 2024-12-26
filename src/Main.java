@@ -5,7 +5,7 @@ import minecraft.attribute.display.color.MINECRAFT_COLOR;
 import minecraft.attribute.enchantment.ENCHANTMENT;
 import minecraft.attribute.enchantment.EnchantedItem;
 import minecraft.attribute.modifier.AttributeModifiers;
-import minecraft.attribute.modifier.PropertyModifier;
+import minecraft.attribute.modifier.Attribute;
 import minecraft.attribute.modifier.attribute.ATTRIBUTE;
 import minecraft.attribute.modifier.slot.SLOT;
 import minecraft.attribute.modifier.uuid.MinecraftUUIDGenerator;
@@ -22,9 +22,9 @@ public class Main {
         // Generate an uuid, which is generally possible without using uuid.
         String uuid = MinecraftUUIDGenerator.get();
 
-        // Create Attributes. Here we create two properties, "max_health" and "armor", and set a series of properties.
-        PropertyModifier max_health = new PropertyModifier(version, SLOT.HEAD, 20.0f, ATTRIBUTE.MAX_HEALTH);
-        PropertyModifier armor = new PropertyModifier(version, SLOT.HEAD, 8.0f, ATTRIBUTE.ARMOR);
+        // Create Attributes. Here we create two attributes, "max_health" and "armor", and set a series of attributes.
+        Attribute max_health = new Attribute(version, SLOT.HEAD, 20.0f, ATTRIBUTE.MAX_HEALTH);
+        Attribute armor = new Attribute(version, SLOT.HEAD, 8.0f, ATTRIBUTE.ARMOR);
 
         // Set the uuid, sometimes it doesn't work if you don't set it.
         max_health.setItemUUID(uuid);

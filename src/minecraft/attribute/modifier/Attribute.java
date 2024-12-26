@@ -4,7 +4,7 @@ import minecraft.attribute.modifier.attribute.ATTRIBUTE;
 import minecraft.attribute.modifier.operation.OPERATION;
 import minecraft.attribute.modifier.slot.SLOT;
 
-public class PropertyModifier {
+public class Attribute {
     private int version;
 
     private SLOT slot;
@@ -13,7 +13,7 @@ public class PropertyModifier {
     private float amount;
     private ATTRIBUTE attributeName;
 
-    public PropertyModifier(int version, SLOT slot, float amount, ATTRIBUTE attributeName) {
+    public Attribute(int version, SLOT slot, float amount, ATTRIBUTE attributeName) {
         this.version = version;
         this.slot = slot;
         this.amount = amount;
