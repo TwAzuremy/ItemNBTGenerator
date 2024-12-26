@@ -1,8 +1,8 @@
-package minecraft.attribute.modifier.attribute;
+package minecraft.nbt.modifier.attribute;
 
 import utils.Utils;
 
-public enum ATTRIBUTE {
+public enum VANILLA_ATTRIBUTE implements AttributeEnumType {
     ARMOR("armor"),
     ARMOR_TOUGHNESS("armor_toughness"),
     ATTACK_DAMAGE("attackDamage"),
@@ -36,10 +36,11 @@ public enum ATTRIBUTE {
 
     private final String attributeName;
 
-    ATTRIBUTE(String attributeName) {
+    VANILLA_ATTRIBUTE(String attributeName) {
         this.attributeName = attributeName;
     }
 
+    @Override
     public String getAttributeName(int version) {
         return switch (version) {
             case 14, 15 -> "generic." + Utils.snakeToLowerCamel(attributeName);

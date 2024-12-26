@@ -1,4 +1,4 @@
-package minecraft.attribute.display.color;
+package minecraft.nbt.display.color;
 
 public enum MINECRAFT_COLOR {
     WHITE,

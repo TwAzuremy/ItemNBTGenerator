@@ -1,15 +1,15 @@
 import minecraft.ItemNBT;
-import minecraft.attribute.display.Display;
-import minecraft.attribute.display.attribute.Text;
-import minecraft.attribute.display.color.MINECRAFT_COLOR;
-import minecraft.attribute.enchantment.ENCHANTMENT;
-import minecraft.attribute.enchantment.EnchantedItem;
-import minecraft.attribute.hideFlags.HIDEFLAGS;
-import minecraft.attribute.modifier.AttributeModifiers;
-import minecraft.attribute.modifier.Attribute;
-import minecraft.attribute.modifier.attribute.ATTRIBUTE;
-import minecraft.attribute.modifier.slot.SLOT;
-import minecraft.attribute.modifier.uuid.MinecraftUUIDGenerator;
+import minecraft.nbt.display.Display;
+import minecraft.nbt.display.attribute.Text;
+import minecraft.nbt.display.color.MINECRAFT_COLOR;
+import minecraft.nbt.enchantment.VANILLA_ENCHANTMENT;
+import minecraft.nbt.enchantment.Enchantments;
+import minecraft.nbt.hideFlags.HIDEFLAGS;
+import minecraft.nbt.modifier.AttributeModifiers;
+import minecraft.nbt.modifier.Attribute;
+import minecraft.nbt.modifier.attribute.VANILLA_ATTRIBUTE;
+import minecraft.nbt.modifier.slot.VANILLA_SLOT;
+import minecraft.nbt.modifier.uuid.MinecraftUUIDGenerator;
 
 import java.util.List;
 
@@ -24,8 +24,8 @@ public class Main {
         String uuid = MinecraftUUIDGenerator.get();
 
         // Create Attributes. Here we create two attributes, "max_health" and "armor", and set a series of attributes.
-        Attribute max_health = new Attribute(version, SLOT.HEAD, 20.0f, ATTRIBUTE.MAX_HEALTH);
-        Attribute armor = new Attribute(version, SLOT.HEAD, 8.0f, ATTRIBUTE.ARMOR);
+        Attribute max_health = new Attribute(version, VANILLA_SLOT.HEAD, 20.0f, VANILLA_ATTRIBUTE.MAX_HEALTH);
+        Attribute armor = new Attribute(version, VANILLA_SLOT.HEAD, 8.0f, VANILLA_ATTRIBUTE.ARMOR);
 
         // Set the uuid, sometimes it doesn't work if you don't set it.
         max_health.setItemUUID(uuid);
@@ -43,14 +43,14 @@ public class Main {
         Display display = new Display(name, List.of(lore_1, lore_2));
 
         // Create enchantment. Here a "Protection" is added with a value of 10
-        EnchantedItem enchantment = new EnchantedItem();
-        enchantment.addEnchantment(ENCHANTMENT.PROTECTION, 10);
+        Enchantments enchantments = new Enchantments();
+        enchantments.addEnchantment(VANILLA_ENCHANTMENT.PROTECTION, 10);
 
         // Add all properties to nbt.
         ItemNBT nbt = new ItemNBT();
         nbt.setAttributeModifiers(attributeModifiers);
         nbt.setDisplay(display);
-        nbt.setEnchantment(enchantment);
+        nbt.setEnchantment(enchantments);
 
         // Hide "enchantment" and "unbreakable".
         // But it doesn't seem to be set "unbreakable". All here only hides the effect of "enchantment".

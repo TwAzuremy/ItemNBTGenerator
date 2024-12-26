@@ -1,19 +1,19 @@
-package minecraft.attribute.modifier;
+package minecraft.nbt.modifier;
 
-import minecraft.attribute.modifier.attribute.ATTRIBUTE;
-import minecraft.attribute.modifier.operation.OPERATION;
-import minecraft.attribute.modifier.slot.SLOT;
+import minecraft.nbt.modifier.attribute.AttributeEnumType;
+import minecraft.nbt.modifier.operation.OPERATION;
+import minecraft.nbt.modifier.slot.SlotEnumType;
 
 public class Attribute {
     private int version;
 
-    private SLOT slot;
+    private SlotEnumType slot;
     private OPERATION operation = OPERATION.ADD_VALUE;
     private String itemUUID = null;
     private float amount;
-    private ATTRIBUTE attributeName;
+    private AttributeEnumType attributeName;
 
-    public Attribute(int version, SLOT slot, float amount, ATTRIBUTE attributeName) {
+    public Attribute(int version, SlotEnumType slot, float amount, AttributeEnumType attributeName) {
         this.version = version;
         this.slot = slot;
         this.amount = amount;
@@ -39,11 +39,11 @@ public class Attribute {
         this.version = version;
     }
 
-    public SLOT getSlot() {
+    public SlotEnumType getSlot() {
         return slot;
     }
 
-    public void setSlot(SLOT slot) {
+    public void setSlot(SlotEnumType slot) {
         this.slot = slot;
     }
 
@@ -71,11 +71,11 @@ public class Attribute {
         this.amount = amount;
     }
 
-    public ATTRIBUTE getAttributeName() {
+    public AttributeEnumType getAttributeName() {
         return attributeName;
     }
 
-    public void setAttributeName(ATTRIBUTE attributeName) {
+    public void setAttributeName(AttributeEnumType attributeName) {
         this.attributeName = attributeName;
     }
 }

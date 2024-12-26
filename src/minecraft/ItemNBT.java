@@ -1,16 +1,16 @@
 package minecraft;
 
-import minecraft.attribute.display.Display;
-import minecraft.attribute.enchantment.EnchantedItem;
-import minecraft.attribute.hideFlags.HIDEFLAGS;
-import minecraft.attribute.modifier.AttributeModifiers;
+import minecraft.nbt.display.Display;
+import minecraft.nbt.enchantment.Enchantments;
+import minecraft.nbt.hideFlags.HIDEFLAGS;
+import minecraft.nbt.modifier.AttributeModifiers;
 
 import java.util.Arrays;
 
 public class ItemNBT {
     private AttributeModifiers attributeModifiers;
     private Display display;
-    private EnchantedItem enchantment;
+    private Enchantments enchantment;
 
     private int CustomModelData;
     private int Damage;
@@ -51,11 +51,11 @@ public class ItemNBT {
         this.display = display;
     }
 
-    public EnchantedItem getEnchantment() {
+    public Enchantments getEnchantment() {
         return enchantment;
     }
 
-    public void setEnchantment(EnchantedItem enchantment) {
+    public void setEnchantment(Enchantments enchantment) {
         this.enchantment = enchantment;
     }
 
@@ -95,6 +95,10 @@ public class ItemNBT {
         return hideFlags;
     }
 
+    /**
+     * Set the flags you want to hide
+     * @param hideFlags the flags you want to hide
+     */
     public void setHideFlags(HIDEFLAGS... hideFlags) {
         this.hideFlags = Arrays.stream(hideFlags)
                 .mapToInt(HIDEFLAGS::getValue)

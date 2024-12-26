@@ -1,12 +1,12 @@
-package minecraft.attribute.modifier;
+package minecraft.nbt.modifier;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class AttributeModifiers {
-    private List<Attribute> attribute;
+    private List<? extends Attribute> attribute;
 
-    public AttributeModifiers(List<Attribute> modifiers) {
+    public AttributeModifiers(List<? extends Attribute> modifiers) {
         this.attribute = modifiers;
     }
 
@@ -21,11 +21,11 @@ public class AttributeModifiers {
                 + "]";
     }
 
-    public List<Attribute> getModifiers() {
+    public List<? extends Attribute> getAttribute() {
         return attribute;
     }
 
-    public void setModifiers(List<Attribute> attribute) {
+    public void setAttribute(List<? extends Attribute> attribute) {
         this.attribute = attribute;
     }
 }

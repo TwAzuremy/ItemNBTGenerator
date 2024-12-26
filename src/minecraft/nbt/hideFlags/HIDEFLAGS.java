@@ -1,4 +1,4 @@
-package minecraft.attribute.hideFlags;
+package minecraft.nbt.hideFlags;
 
 public enum HIDEFLAGS {
     ENCHANTMENTS(1),

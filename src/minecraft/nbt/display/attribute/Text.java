@@ -1,6 +1,6 @@
-package minecraft.attribute.display.attribute;
+package minecraft.nbt.display.attribute;
 
-import minecraft.attribute.display.color.MINECRAFT_COLOR;
+import minecraft.nbt.display.color.MINECRAFT_COLOR;
 
 public class Text {
     private String text;

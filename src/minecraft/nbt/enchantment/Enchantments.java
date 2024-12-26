@@ -1,19 +1,19 @@
-package minecraft.attribute.enchantment;
+package minecraft.nbt.enchantment;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class EnchantedItem {
-    private Map<ENCHANTMENT, Integer> enchantments = new HashMap<>();
+public class Enchantments {
+    private Map<EnchantmentType, Integer> enchantments = new HashMap<>();
 
-    public EnchantedItem(Map<ENCHANTMENT, Integer> enchantments) {
+    public Enchantments(Map<EnchantmentType, Integer> enchantments) {
         this.enchantments = enchantments;
     }
 
-    public EnchantedItem() {}
+    public Enchantments() {}
 
-    public void addEnchantment(ENCHANTMENT enchantment, int level) {
+    public void addEnchantment(EnchantmentType enchantment, int level) {
         enchantments.put(enchantment, level);
     }
 

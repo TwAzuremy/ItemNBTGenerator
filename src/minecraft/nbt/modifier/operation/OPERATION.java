@@ -1,4 +1,4 @@
-package minecraft.attribute.modifier.operation;
+package minecraft.nbt.modifier.operation;
 
 public enum OPERATION {
     ADD_VALUE(0),

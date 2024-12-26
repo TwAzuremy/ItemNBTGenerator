@@ -1,4 +1,4 @@
-package minecraft.attribute.modifier.uuid;
+package minecraft.nbt.modifier.uuid;
 
 import utils.Request;
 import utils.Utils;

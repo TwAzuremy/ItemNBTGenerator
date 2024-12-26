@@ -1,6 +1,6 @@
-package minecraft.attribute.display;
+package minecraft.nbt.display;
 
-import minecraft.attribute.display.attribute.Text;
+import minecraft.nbt.display.attribute.Text;
 
 import java.util.List;
 import java.util.stream.Collectors;

@@ -1,6 +1,6 @@
-package minecraft.attribute.enchantment;
+package minecraft.nbt.enchantment;
 
-public enum ENCHANTMENT {
+public enum VANILLA_ENCHANTMENT implements EnchantmentType {
     SWEEPING_EDGE("sweeping_edge"),
     AQUA_AFFINITY("aqua_affinity"),
     DEPTH_STRIDER("depth_strider"),
@@ -46,10 +46,11 @@ public enum ENCHANTMENT {
 
     private final String enchantment;
 
-    ENCHANTMENT(String enchantment) {
+    VANILLA_ENCHANTMENT(String enchantment) {
         this.enchantment = enchantment;
     }
 
+    @Override
     public String getEnchantment() {
         return enchantment;
     }
