@@ -1,5 +1,5 @@
 package minecraft.nbt.modifier.attribute;
 
-public interface AttributeEnumType {
+public interface AttributeType {
     String getAttributeName(int version);
 }

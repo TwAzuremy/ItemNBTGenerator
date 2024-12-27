@@ -1,18 +1,18 @@
 package curios.nbt.modifier;
 
 import minecraft.nbt.modifier.Attribute;
-import minecraft.nbt.modifier.attribute.AttributeEnumType;
-import minecraft.nbt.modifier.slot.SlotEnumType;
+import minecraft.nbt.modifier.attribute.AttributeType;
+import minecraft.nbt.modifier.slot.SlotType;
 
 public class CuriosAttribute extends Attribute {
-    private AttributeEnumType name;
+    private AttributeType name;
 
-    public CuriosAttribute(int version, SlotEnumType slot, float amount, AttributeEnumType attributeName, AttributeEnumType name) {
+    public CuriosAttribute(int version, SlotType slot, float amount, AttributeType attributeName, AttributeType name) {
         super(version, slot, amount, attributeName);
         this.name = name;
     }
 
-    public CuriosAttribute(int version, SlotEnumType slot, float amount, AttributeEnumType attributeName) {
+    public CuriosAttribute(int version, SlotType slot, float amount, AttributeType attributeName) {
         super(version, slot, amount, attributeName);
         this.name = attributeName;
     }
@@ -29,11 +29,11 @@ public class CuriosAttribute extends Attribute {
                 "}";
     }
 
-    public AttributeEnumType getName() {
+    public AttributeType getName() {
         return name;
     }
 
-    public void setName(AttributeEnumType name) {
+    public void setName(AttributeType name) {
         this.name = name;
     }
 }

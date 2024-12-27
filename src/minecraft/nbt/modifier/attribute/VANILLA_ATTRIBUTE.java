@@ -2,7 +2,7 @@ package minecraft.nbt.modifier.attribute;
 
 import utils.Utils;
 
-public enum VANILLA_ATTRIBUTE implements AttributeEnumType {
+public enum VANILLA_ATTRIBUTE implements AttributeType {
     ARMOR("armor"),
     ARMOR_TOUGHNESS("armor_toughness"),
     ATTACK_DAMAGE("attackDamage"),

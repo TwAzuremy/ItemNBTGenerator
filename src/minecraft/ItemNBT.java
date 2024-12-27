@@ -6,9 +6,11 @@ import minecraft.nbt.hideFlags.HIDEFLAGS;
 import minecraft.nbt.modifier.AttributeModifiers;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ItemNBT {
-    private AttributeModifiers attributeModifiers;
+    private List<AttributeModifiers> attributeModifiers;
     private Display display;
     private Enchantments enchantment;
 
@@ -24,7 +26,9 @@ public class ItemNBT {
     @Override
     public String toString() {
         return "{" +
-                (attributeModifiers != null ? attributeModifiers + ", " : "") +
+                (!attributeModifiers.isEmpty() ? attributeModifiers.stream()
+                        .map(attributeModifiers -> attributeModifiers.toString() + ", ")
+                        .collect(Collectors.joining()) : "") +
                 (display != null ? display + ", " : "") +
                 (enchantment != null ? enchantment + ", " : "") +
                 (CustomModelData != 0 ? "CustomModelData: " + CustomModelData + ", " : "") +
@@ -35,12 +39,16 @@ public class ItemNBT {
                 '}';
     }
 
-    public AttributeModifiers getAttributeModifiers() {
+    public List<AttributeModifiers> getAttributeModifiers() {
         return attributeModifiers;
     }
 
-    public void setAttributeModifiers(AttributeModifiers attributeModifiers) {
+    public void setAttributeModifiers(List<AttributeModifiers> attributeModifiers) {
         this.attributeModifiers = attributeModifiers;
+    }
+
+    public void setAttributeModifiers(AttributeModifiers... attributeModifiers) {
+        this.attributeModifiers = List.of(attributeModifiers);
     }
 
     public Display getDisplay() {
@@ -97,6 +105,7 @@ public class ItemNBT {
 
     /**
      * Set the flags you want to hide
+     *
      * @param hideFlags the flags you want to hide
      */
     public void setHideFlags(HIDEFLAGS... hideFlags) {

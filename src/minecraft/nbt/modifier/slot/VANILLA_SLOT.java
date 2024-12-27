@@ -1,6 +1,6 @@
 package minecraft.nbt.modifier.slot;
 
-public enum VANILLA_SLOT implements SlotEnumType {
+public enum VANILLA_SLOT implements SlotType {
     MAINHAND,
     OFFHAND,
     HEAD,

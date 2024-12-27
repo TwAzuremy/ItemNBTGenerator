@@ -1,8 +1,8 @@
 package curios.nbt.modifier.slot;
 
-import minecraft.nbt.modifier.slot.SlotEnumType;
+import minecraft.nbt.modifier.slot.SlotType;
 
-public enum CURIOS_SLOT implements SlotEnumType {
+public enum CURIOS_SLOT implements SlotType {
     BACK,
     BELT,
     BODY,
