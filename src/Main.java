@@ -47,7 +47,7 @@ public class Main {
         enchantments.addEnchantment(VANILLA_ENCHANTMENT.PROTECTION, 10);
 
         // Add all properties to nbt.
-        ItemNBT nbt = new ItemNBT();
+        ItemNBT nbt = new ItemNBT("minecraft:diamond_helmet");
         nbt.setAttributeModifiers(attributeModifiers);
         nbt.setDisplay(display);
         nbt.setEnchantment(enchantments);

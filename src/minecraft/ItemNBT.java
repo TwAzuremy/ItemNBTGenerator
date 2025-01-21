@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ItemNBT {
+    private final String item;
+
     private List<AttributeModifiers> attributeModifiers;
     private Display display;
     private Enchantments enchantment;
@@ -20,22 +22,23 @@ public class ItemNBT {
     private Boolean unBreakable = false;
     private int hideFlags = 0;
 
-    public ItemNBT() {
+    public ItemNBT(String item) {
+        this.item = item;
     }
 
     @Override
     public String toString() {
-        return "{" +
-                (!attributeModifiers.isEmpty() ? attributeModifiers.stream()
+        return item + "{" +
+                (attributeModifiers != null && !attributeModifiers.isEmpty() ? attributeModifiers.stream()
                         .map(attributeModifiers -> attributeModifiers.toString() + ", ")
                         .collect(Collectors.joining()) : "") +
                 (display != null ? display + ", " : "") +
-                (enchantment != null ? enchantment + ", " : "") +
+                (enchantment != null ? enchantment.toString(item.contains("enchanted_book")) + ", " : "") +
                 (CustomModelData != 0 ? "CustomModelData: " + CustomModelData + ", " : "") +
                 (Damage != 0 ? "Damage: " + Damage + ", " : "") +
                 (RepairCost != 0 ? "RepairCost: " + RepairCost + ", " : "") +
                 (hideFlags != 0 ? "HideFlags: " + hideFlags + ", " : "") +
-                "Unbreakable: " + (unBreakable ? "1b" : "0b") +
+                "Unbreakable: " + unBreakable +
                 '}';
     }
 
@@ -111,6 +114,6 @@ public class ItemNBT {
     public void setHideFlags(HIDEFLAGS... hideFlags) {
         this.hideFlags = Arrays.stream(hideFlags)
                 .mapToInt(HIDEFLAGS::getValue)
-                .reduce(0, (a, b) -> a | b);
+                .reduce(0, Integer::sum);
     }
 }

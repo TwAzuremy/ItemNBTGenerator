@@ -42,7 +42,9 @@ public enum VANILLA_ATTRIBUTE implements AttributeType {
 
     @Override
     public String getAttributeName(int version) {
-        return switch (version) {
+        String namespace = "minecraft";
+
+        return namespace + ":" + switch (version) {
             case 14, 15 -> "generic." + Utils.snakeToLowerCamel(attributeName);
             case 16, 17, 18, 19, 20 -> "generic." + attributeName;
             default -> attributeName;

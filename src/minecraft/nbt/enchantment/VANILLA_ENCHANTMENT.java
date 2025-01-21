@@ -52,6 +52,8 @@ public enum VANILLA_ENCHANTMENT implements EnchantmentType {
 
     @Override
     public String getEnchantment() {
-        return enchantment;
+        String namespace = "minecraft";
+
+        return namespace + ":" + enchantment;
     }
 }
